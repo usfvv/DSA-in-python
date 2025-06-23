@@ -42,6 +42,53 @@ class SinglyLinkedList:
         if new_node.next is None:
             self.tail = new_node
 
+    def remove_first(self):
+        if self.is_empty():
+            print("List is empty")
+            return
+        print(f"Removing first {self.head.data}")
+        self.head = self.head.next
+        if self.head is None:
+            self.tail = None
+
+    def remove_last(self):
+        if self.is_empty():
+            print("List is empty")
+            return
+        if self.head.next is None :
+            print(f"Removing last :{self.head.data}") 
+            self.head = self.tail = None
+            return
+        current = self.head
+        while current.next != self.tail:
+            current = current.next
+        print(f"Removing last : {self.tail.data}")
+        current.next = None
+        self.tail = current
+
+    def remove_key(self, val):
+        if self.is_empty():
+            print("List is empty")
+            return
+        current = self.head
+        prev = None
+        while current:
+            if current.data == val :
+                if prev is None:
+                    print(f"Removing head with key {val}")
+                    self.head = current.next
+                    if self.head is None :
+                        self.tail = None
+                else:
+                    print(f"Removing key {val}")
+                    prev.next = current.next
+                    if current == self.tail:
+                        self.tail = prev
+                return
+            prev = current
+            current = current.next
+        print(f"value {val} not found.")
+
     def display(self):
         if self.is_empty():
             print("List is empty")
@@ -52,17 +99,3 @@ class SinglyLinkedList:
             print(current.data, end=" -> ")
             current = current.next
         print("None")
-
-
-l = SinglyLinkedList()
-
-l.insert_last(10)
-l.insert_last(30)
-
-l.insert_at_position(20,1)
-
-l.insert_last(40)
-
-l.insert_first(0)
-
-l.display()
