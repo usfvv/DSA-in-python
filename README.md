@@ -19,8 +19,6 @@ data_structures/
 
 📚 Author
 Yousef Alaa
-Backend Developer (FastAPI) – CS Student at NUB
+python Developer – CS Student at NUB
 📍 El Minya, Egypt
 📧 yousefalaa0@icloud.com
-🔗 LinkedIn
-🔗 GitHub
