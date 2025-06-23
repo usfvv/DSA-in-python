@@ -8,3 +8,19 @@ testable version of a specific structure — without using Python’s built-in d
 
 ## 📁 Folder Structure
 
+data_structures/
+├── CircularQueue.py # Circular Queue using array
+├── DynamicArray.py # Custom dynamic array implementation
+├── LinkedQueue.py # Queue using linked list
+├── LinkedSetack.py # Stack using linked list (typo: "Setack" → "Stack")
+├── Stack.py # Array-based stack
+
+
+
+📚 Author
+Yousef Alaa
+Backend Developer (FastAPI) – CS Student at NUB
+📍 El Minya, Egypt
+📧 yousefalaa0@icloud.com
+🔗 LinkedIn
+🔗 GitHub
