@@ -89,6 +89,31 @@ class SinglyLinkedList:
             current = current.next
         print(f"value {val} not found.")
 
+    def reverse(self):
+        if self.is_empty() or self.head.next is None :
+            return
+        prev = None
+        current = self.head
+        self.tail = self.head
+        while current:
+            nxt = current.next
+            current.next = prev
+            prev = current
+            current = nxt
+        self.head = prev
+
+    def search(self, element):
+        if self.is_empty():
+            print("List is empty")
+        current = self.head
+        pos = 0
+        while current is not None:
+            if current.data == element:
+                return f"Element {current.data} in index -> {pos}"
+            current = current.next
+            pos += 1
+        return "Element not found"
+
     def display(self):
         if self.is_empty():
             print("List is empty")
@@ -99,3 +124,16 @@ class SinglyLinkedList:
             print(current.data, end=" -> ")
             current = current.next
         print("None")
+
+
+ll = SinglyLinkedList()
+ll.insert_last(1)
+ll.insert_last(2)
+ll.insert_last(3)
+ll.insert_last(4)
+
+ll.display()          # 1 -> 2 -> 3 -> 4 -> None
+ll.reverse()
+ll.display()          # 4 -> 3 -> 2 -> 1 -> None
+
+print(ll.search(3))   #Element 3 in index -> 1
