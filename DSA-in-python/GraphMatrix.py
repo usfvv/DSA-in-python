@@ -25,19 +25,14 @@ a = GrapghMatrix(nodes)
 
 a.add_edge("A", "B")
 a.add_edge("A", "C")
-a.add_edge("B", "A")
 a.add_edge("B", "D")
 a.add_edge("B", "E")
-a.add_edge("C", "A")
 a.add_edge("C", "D")
-a.add_edge("D", "C")
-a.add_edge("D", "B")
 a.add_edge("D", "E")
-a.add_edge("E", "B")
-a.add_edge("E", "D")
 
-a.display()     #A --> ['B', 'C', 'B', 'C']
-                #B --> ['A', 'A', 'D', 'E', 'D', 'E']
-                #C --> ['A', 'A', 'D', 'D']
-                #D --> ['B', 'C', 'C', 'B', 'E', 'E']
-                #E --> ['B', 'D', 'B', 'D']
+a.display()     #    A B C D E
+                # A: 0 1 1 0 0
+                # B: 1 0 0 1 1
+                # C: 1 0 0 1 0
+                # D: 0 1 1 0 1
+                # E: 0 1 0 1 0
